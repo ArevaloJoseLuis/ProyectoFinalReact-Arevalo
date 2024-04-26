@@ -1,73 +1,92 @@
-[{
-  "id": 1,
-  "img": "http://dummyimage.com/111x100.png/5fa2dd/ffffff",
-  "provincia": "Missouri",
-  "ciudad": "Saint Louis",
-  "estrellas": 0.6,
-  "valor": "$375.31",
-  "categoria": "Departamento"
-}, {
-  "id": 2,
-  "img": "http://dummyimage.com/111x100.png/dddddd/000000",
-  "provincia": "Missouri",
-  "ciudad": "Springfield",
-  "estrellas": 4.5,
-  "valor": "$690.20",
-  "categoria": "Departamento"
-}, {
-  "id": 3,
-  "img": "http://dummyimage.com/111x100.png/ff4444/ffffff",
-  "provincia": "Indiana",
-  "ciudad": "Indianapolis",
-  "estrellas": 3.7,
-  "valor": "$478.65",
-  "categoria": "Departamento"
-}, {
-  "id": 4,
-  "img": "http://dummyimage.com/111x100.png/cc0000/ffffff",
-  "provincia": "Virginia",
-  "ciudad": "Vienna",
-  "estrellas": 2.2,
-  "valor": "$867.75",
-  "categoria": "Departamento"
-}, {
-  "id": 5,
-  "img": "http://dummyimage.com/111x100.png/ff4444/ffffff",
-  "provincia": "Louisiana",
-  "ciudad": "Shreveport",
-  "estrellas": 0.3,
-  "valor": "$958.12",
-  "categoria": "Casa"
-}, {
-  "id": 6,
-  "img": "http://dummyimage.com/111x100.png/cc0000/ffffff",
-  "provincia": "Nevada",
-  "ciudad": "Las Vegas",
-  "estrellas": 3.3,
-  "valor": "$1031.46",
-  "categoria": "Casa"
-}, {
-  "id": 7,
-  "img": "http://dummyimage.com/111x100.png/5fa2dd/ffffff",
-  "provincia": "Pennsylvania",
-  "ciudad": "Harrisburg",
-  "estrellas": 2.7,
-  "valor": "$1208.33",
-  "categoria": "Casa"
-}, {
-  "id": 8,
-  "img": "http://dummyimage.com/111x100.png/dddddd/000000",
-  "provincia": "Virginia",
-  "ciudad": "Richmond",
-  "estrellas": 4.7,
-  "valor": "$765.25",
-  "categoria": "Casa"
-}, {
-  "id": 9,
-  "img": "http://dummyimage.com/111x100.png/ff4444/ffffff",
-  "provincia": "Connecticut",
-  "ciudad": "Hartford",
-  "estrellas": 4.8,
-  "valor": "$1154.00",
-  "categoria": "Casa"
-}]
+[
+  {
+    "id": 1,
+    "img": "http://dummyimage.com/111x100.png/5fa2dd/ffffff",
+    "provincia": "Missouri",
+    "ciudad": "Saint Louis",
+    "estrellas": 0.6,
+    "valor": "$375.31",
+    "categoria": "Departamento",
+    "noches": 200
+  },
+  {
+    "id": 2,
+    "img": "http://dummyimage.com/111x100.png/dddddd/000000",
+    "provincia": "Missouri",
+    "ciudad": "Springfield",
+    "estrellas": 4.5,
+    "valor": "$690.20",
+    "categoria": "Departamento",
+    "noches": 100
+  },
+  {
+    "id": 3,
+    "img": "http://dummyimage.com/111x100.png/ff4444/ffffff",
+    "provincia": "Indiana",
+    "ciudad": "Indianapolis",
+    "estrellas": 3.7,
+    "valor": "$478.65",
+    "categoria": "Departamento",
+    "noches": 540
+  },
+  {
+    "id": 4,
+    "img": "http://dummyimage.com/111x100.png/cc0000/ffffff",
+    "provincia": "Virginia",
+    "ciudad": "Vienna",
+    "estrellas": 2.2,
+    "valor": "$867.75",
+    "categoria": "Departamento",
+    "noches": 227
+  },
+  {
+    "id": 5,
+    "img": "http://dummyimage.com/111x100.png/ff4444/ffffff",
+    "provincia": "Louisiana",
+    "ciudad": "Shreveport",
+    "estrellas": 0.3,
+    "valor": "$958.12",
+    "categoria": "Casa",
+    "noches": 22
+  },
+  {
+    "id": 6,
+    "img": "http://dummyimage.com/111x100.png/cc0000/ffffff",
+    "provincia": "Nevada",
+    "ciudad": "Las Vegas",
+    "estrellas": 3.3,
+    "valor": "$1031.46",
+    "categoria": "Casa",
+    "noches": 1
+  },
+  {
+    "id": 7,
+    "img": "http://dummyimage.com/111x100.png/5fa2dd/ffffff",
+    "provincia": "Pennsylvania",
+    "ciudad": "Harrisburg",
+    "estrellas": 2.7,
+    "valor": "$1208.33",
+    "categoria": "Casa",
+    "noches": 2000
+  },
+  {
+    "id": 8,
+    "img": "http://dummyimage.com/111x100.png/dddddd/000000",
+    "provincia": "Virginia",
+    "ciudad": "Richmond",
+    "estrellas": 4.7,
+    "valor": "$765.25",
+    "categoria": "Casa",
+    "noches": 17
+  },
+  {
+    "id": 9,
+    "img": "http://dummyimage.com/111x100.png/ff4444/ffffff",
+    "provincia": "Connecticut",
+    "ciudad": "Hartford",
+    "estrellas": 4.8,
+    "valor": "$1154.00",
+    "categoria": "Casa",
+    "noches": 247
+  }
+]

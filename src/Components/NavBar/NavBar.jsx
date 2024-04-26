@@ -11,16 +11,14 @@ function NavBar() {
         <Container>
           <Navbar.Brand href="/">Navbar</Navbar.Brand>
           <Nav className="me-auto navbar-expand-lg">
-            <Nav.Link to="/" as={NavLink}>Home</Nav.Link>
-            <Nav.Link to="/categoria/Departamento" as={NavLink}>Departamentos</Nav.Link>
-            <Nav.Link to="/categoria/Casa" as={NavLink}>Casas</Nav.Link>
+            <Nav.Link as={NavLink} to="/">Home</Nav.Link>
+            <Nav.Link as={NavLink} to="/categoria/Departamento">Departamentos</Nav.Link>
+            <Nav.Link as={NavLink} to="/categoria/Casa">Casas</Nav.Link>
           </Nav>
-          <div><CartWidget/></div> 
+          <CartWidget />
         </Container>
       </Navbar>
       <br/>
-      
-     
     </>
   );
 }

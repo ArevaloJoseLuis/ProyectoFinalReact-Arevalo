@@ -1,17 +1,55 @@
-import React from "react"
-
-
-import { BsCart3 } from "react-icons/bs";;
+import React from "react";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
+import { BsCart3 } from "react-icons/bs";
 
 const CartWidget = () => {
-    return (
-        
-            <button className = "me-auto">
-                <BsCart3 /><strong>0</strong>
-                
-            </button>
-        
-    )
-}
+  const { items } = useContext(CartContext);
 
-export default CartWidget
+  const total = items.reduce(
+    (acumulador, valorActual) => acumulador + valorActual.quantity,
+    0
+  );
+
+  return (
+    <Link to="/cart">
+      <button className="me-auto">
+        <BsCart3 />
+        <strong>{total}</strong>
+      </button>
+    </Link>
+  );
+};
+
+export default CartWidget;
+
+
+
+/*
+import { Link } from "react-router-dom";
+import { useContext } from "react"; 
+import { CartContext } from "../../contexts/CartContext";
+import { BsCart3 } from "react-icons/bs";
+
+const CartWidget = () => {
+  const { items } = useContext(CartContext);
+
+  const total = items.reduce(
+    (acumulador, valorActual) => acumulador + valorActual.noches,
+    0
+  );
+
+  return (
+    <Link to="/cart">
+      <button className="me-auto">
+        <BsCart3 />
+        <strong>{total}</strong>
+      </button>
+    </Link>
+  );
+};
+
+export default CartWidget;
+
+*/
