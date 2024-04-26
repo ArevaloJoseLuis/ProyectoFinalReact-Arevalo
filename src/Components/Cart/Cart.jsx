@@ -24,6 +24,8 @@ export const Cart = () => {
     });
   };
 
+  const total = items.reduce((acu, act) => acu + act.valor * act.quantity, 0);
+
   const handleOrder = () => {
     const order = {
       buyer,
@@ -35,16 +37,15 @@ export const Cart = () => {
     const orderCollection = collection(db, "orders");
 
     addDoc(orderCollection, order).then(({ id }) => {
-      if (id) {
-        alert("Su orden: " + id + " ha sido completada!");
-      }
-    });
+        if (id) {
+          alert("Su orden: " + id + " ha sido completada!");
+        }
+      })
   };
 
-  const total = items.reduce((acu, act) => acu + act.valor * act.noches, 0);
+  
 
   return (
-
     <Container>
       <h1 className="mt-5 mb-4">Carrito de Compras</h1>
       <Table striped bordered hover>
@@ -108,7 +109,7 @@ export const Cart = () => {
             required
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="button" onClick={handleOrder}>
           Comprar
         </Button>
       </Form>
