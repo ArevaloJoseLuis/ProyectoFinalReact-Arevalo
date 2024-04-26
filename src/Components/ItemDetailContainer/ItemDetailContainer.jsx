@@ -25,7 +25,7 @@ export const ItemDetailContainer = () => {
   if(!apartamento) return null;
 
   return (
-    <Container className="grid">
+    <Container>
       <ItemDetail apartamento={apartamento} />
     </Container>
   );

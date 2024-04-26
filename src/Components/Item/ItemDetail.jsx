@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import { ItemCount } from "../ItemCount/ItemCount";
 import {Container, Row, Col, Button} from "react-bootstrap";
+import Image from "react-bootstrap/Image";
 
 export const ItemDetail = ({ apartamento }) => {
   const { addItem } = useContext(CartContext);
@@ -12,11 +13,19 @@ export const ItemDetail = ({ apartamento }) => {
 
   return (
     <Container>
-      <h1 className="my-4">Detalle del Producto</h1>
-      <div>{apartamento.ciudad}</div>
-      <img src={apartamento.img} alt={apartamento.provincia} />
-      <div>Stock: {apartamento.noches}</div>
-      <ItemCount onAdd={add} noches={apartamento.noches} />
+      <header className="ecommerce-header">
+        <h1 className="my-4 text-center">Detalle del Producto</h1>
+        </header>
+      <div className="product-details row justify-content-center">
+        <Col xs={12} md={6} className="mb-4 mb-md-0">
+          <Image src={apartamento.img} alt={apartamento.provincia} rounded fluid />
+        </Col>
+        <div className="product-info col-md-6">
+          <div className="location mb-3">{apartamento.provincia}, {apartamento.ciudad}</div>
+          <div className="stock mb-3">Stock: {apartamento.noches}</div>
+          <ItemCount onAdd={add} noches={apartamento.noches} />
+        </div>
+      </div>
     </Container>
   );
 };
