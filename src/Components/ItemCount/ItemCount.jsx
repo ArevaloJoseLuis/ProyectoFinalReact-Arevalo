@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "react-bootstrap";
 
 export const ItemCount = ({ onAdd, noches }) => {
   const [count, setCount] = useState(1);
@@ -17,11 +18,17 @@ export const ItemCount = ({ onAdd, noches }) => {
   };
 
   return (
-    <div>
-      <button onClick={handleDecrease}>-</button>
-      <input value={count} readOnly />
-      <button onClick={handleIncrease}>+</button>
-      <button onClick={handleAdd}>Agregar Carrito</button>
+    <div className="d-flex align-items-center">
+      <Button variant="light" onClick={handleDecrease} className="me-2">-</Button>
+      <input
+        type="number"
+        value={count}
+        readOnly
+        className="form-control text-center"
+        style={{ width: "60px" }}
+      />
+      <Button variant="light" onClick={handleIncrease} className="ms-2">+</Button>
+      <Button variant="primary" onClick={handleAdd} className="ms-3">Agregar al Carrito</Button>
     </div>
   );
 };

@@ -1,9 +1,6 @@
 import { createContext, useState } from "react";
 
-export const CartContext = createContext(
-  {items:[],
-  }
-);
+export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [items, setItems] = useState([]);
@@ -13,7 +10,7 @@ export const CartProvider = ({ children }) => {
   const addItem = (item, quantity) => {
     const exists = items.some((i) => i.id === item.id);
 
-  if (exists) {
+    if (exists) {
       const updateItems = items.map((i) => {
         if (i.id === item.id) {
           return {

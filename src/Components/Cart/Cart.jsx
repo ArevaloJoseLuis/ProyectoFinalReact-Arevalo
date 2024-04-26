@@ -1,7 +1,7 @@
-import Container from "react-bootstrap/Container";
 import { useContext, useState } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { Container, Table, Button, Form } from "react-bootstrap";
 
 const initialValues = {
   name: "",
@@ -10,7 +10,7 @@ const initialValues = {
 };
 
 export const Cart = () => {
-  const [buyer, setBuyer] = useState(initialValues); // Corrected useState usage
+  const [buyer, setBuyer] = useState(initialValues);
   const { clear, items, removeItem } = useContext(CartContext);
 
   const handleChange = (ev) => {
@@ -44,9 +44,10 @@ export const Cart = () => {
   const total = items.reduce((acu, act) => acu + act.valor * act.noches, 0);
 
   return (
+
     <Container>
-      <h1>Soy un Cart</h1>
-      <table>
+      <h1 className="mt-5 mb-4">Carrito de Compras</h1>
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>Nombre</th>
@@ -60,48 +61,57 @@ export const Cart = () => {
             <tr key={item.id}>
               <td>{item.provincia}</td>
               <td>{item.quantity}</td>
-              <td>{item.valor}</td>
+              <td>${item.valor}</td>
               <td>
-                <button onClick={() => removeItem(item.id)}>Eliminar</button>
+                <Button variant="danger" onClick={() => removeItem(item.id)}>
+                  Eliminar
+                </Button>
               </td>
             </tr>
           ))}
         </tbody>
-      </table>
-      <div onClick={clear}> x vaciar </div>
-      <h2>Datos</h2>
-      <form>
-        <div>
-          <label>Nombre</label>
-          <input
+      </Table>
+      <div className="mb-4">
+        <Button variant="secondary" onClick={clear}>
+          Vaciar Carrito
+        </Button>
+      </div>
+      <h2>Datos del Comprador</h2>
+      <Form onSubmit={handleOrder}>
+        <Form.Group className="mb-3" controlId="formName">
+          <Form.Label>Nombre</Form.Label>
+          <Form.Control
             type="text"
             value={buyer.name}
             name="name"
             onChange={handleChange}
+            required
           />
-        </div>
-        <div>
-          <label>Celular</label>
-          <input
-            type="number"
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formPhone">
+          <Form.Label>Celular</Form.Label>
+          <Form.Control
+            type="tel"
             value={buyer.phone}
             name="phone"
             onChange={handleChange}
+            required
           />
-        </div>
-        <div>
-          <label>Email</label>
-          <input
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
             type="email"
             value={buyer.email}
             name="email"
             onChange={handleChange}
+            required
           />
-        </div>
-      </form>
-      <button type="button" onClick={handleOrder}>
-        Comprar
-      </button>
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Comprar
+        </Button>
+      </Form>
     </Container>
   );
 };

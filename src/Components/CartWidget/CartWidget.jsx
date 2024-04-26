@@ -15,7 +15,7 @@ const CartWidget = () => {
   return (
     <Link to="/cart">
       <button className="me-auto">
-        <BsCart3 />
+        <BsCart3 size={28}/>
         <strong>{total}</strong>
       </button>
     </Link>
@@ -23,33 +23,3 @@ const CartWidget = () => {
 };
 
 export default CartWidget;
-
-
-
-/*
-import { Link } from "react-router-dom";
-import { useContext } from "react"; 
-import { CartContext } from "../../contexts/CartContext";
-import { BsCart3 } from "react-icons/bs";
-
-const CartWidget = () => {
-  const { items } = useContext(CartContext);
-
-  const total = items.reduce(
-    (acumulador, valorActual) => acumulador + valorActual.noches,
-    0
-  );
-
-  return (
-    <Link to="/cart">
-      <button className="me-auto">
-        <BsCart3 />
-        <strong>{total}</strong>
-      </button>
-    </Link>
-  );
-};
-
-export default CartWidget;
-
-*/

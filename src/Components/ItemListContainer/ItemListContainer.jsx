@@ -38,9 +38,6 @@ export const ItemListContainer = () => {
   if (loading) return <div>loading</div>;
   return (
     <Container>
-      <div>
-        <h1>Aqui tenes todas tus opciones</h1>
-      </div>
       <div className="grid">
         <ItemList apartamentos={apartamentos} />
       </div>
