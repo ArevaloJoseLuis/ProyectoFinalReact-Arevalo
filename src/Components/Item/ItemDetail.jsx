@@ -21,9 +21,9 @@ export const ItemDetail = ({ apartamento }) => {
           <Image src={apartamento.img} alt={apartamento.provincia} rounded fluid />
         </Col>
         <div className="product-info col-md-6">
-          <div className="location mb-3">{apartamento.provincia}, {apartamento.ciudad}</div>
-          <div className="stock mb-3">Stock: {apartamento.noches}</div>
-          <ItemCount onAdd={add} noches={apartamento.noches} />
+          <div className="location mb-3"><h2>{apartamento.provincia}, {apartamento.ciudad}</h2></div>
+          <div className="stock mb-3">Noches Disponibles {apartamento.noches}</div>
+          <div className="mb-3"><ItemCount className="mb-3" onAdd={add} noches={apartamento.noches} /></div>
         </div>
       </div>
     </Container>
