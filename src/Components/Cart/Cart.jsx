@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-import { Container, Table, Button, Form } from "react-bootstrap";
+import { Container, Table, Button, Form, Modal } from "react-bootstrap";
 
 const initialValues = {
   name: "",
@@ -11,6 +11,8 @@ const initialValues = {
 
 export const Cart = () => {
   const [buyer, setBuyer] = useState(initialValues);
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [orderId, setOrderId] = useState(null);
   const { clear, items, removeItem } = useContext(CartContext);
 
   const handleChange = (ev) => {
@@ -36,14 +38,18 @@ export const Cart = () => {
     const db = getFirestore();
     const orderCollection = collection(db, "orders");
 
-    addDoc(orderCollection, order).then(({ id }) => {
-        if (id) {
-          alert("Su orden: " + id + " ha sido completada!");
-        }
-      })
+    addDoc(orderCollection, order).then((docRef) => {
+      const id = docRef.id;
+      setOrderId(id);
+      setShowConfirmation(true);
+    });
   };
 
-  
+  const handleCloseConfirmation = () => {
+    setShowConfirmation(false);
+    setOrderId(null);
+    clear(); 
+  };
 
   return (
     <Container>
@@ -51,8 +57,9 @@ export const Cart = () => {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>Nombre</th>
-            <th>Cantidad</th>
+            <th>Tipo</th>
+            <th>Ubicacion</th>
+            <th>Estadia</th>
             <th>Valor</th>
             <th>Eliminar</th>
           </tr>
@@ -60,7 +67,8 @@ export const Cart = () => {
         <tbody>
           {items.map((item) => (
             <tr key={item.id}>
-              <td>{item.provincia}</td>
+              <td>{item.categoria}</td>
+              <td>{item.provincia}, {item.ciudad}</td>
               <td>{item.quantity}</td>
               <td>${item.valor}</td>
               <td>
@@ -113,6 +121,22 @@ export const Cart = () => {
           Comprar
         </Button>
       </Form>
+
+      {/* Confirmation Modal */}
+      <Modal show={showConfirmation} onHide={handleCloseConfirmation}>
+        <Modal.Header closeButton>
+          <Modal.Title>Order Confirmation</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Su orden ha sido completada!</p>
+          <p>El ID de su orden es: {orderId}</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseConfirmation}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 };
