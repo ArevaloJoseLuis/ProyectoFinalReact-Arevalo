@@ -1,17 +1,21 @@
-HTML5CSS3JavaScriptNodeJSReactBootstrapFirebaseReact RouterDepfu
 
-Logohabemuspapagit 
-Habemus Papa! React - Curso de CoderHouse
+<br />
+<div align="center">
+  <h3 align="center">Habemus Papa! React - Curso de CoderHouse</h3>
 
-Video de navegación en la aplicación (click para ver)
-habemuspapayoutube
+
+  <p align="center">
+    
+   
+</div>
+
 Proyecto ficticio de sitio e-commerce creado para el curso de ReactJS de CoderHouse, basado en el proyecto Habemus Papa! para el curso de Desarrollo Web.
 
 En este proyecto para el curso de ReactJS creamos varios componentes con el objetivo de construir un sitio e-commerce funcional. Los componentes centrales para el desarrollo de la funcionalidad son: ItemListContainer, ItemList, Item, ItemDetailContainer, ItemDetail, CartView, CartWidget, CartContext, NavBar, ItemCount.
 
 Comenzamos instalando el software necesario, NodeJS, npm, etc. Luego con el comando npx create-react-app para generar la estructura básica de un proyecto ReactJS.
 
-Decidí reutilizar los diseños del proyecto Habemus Papa! que realizamos en el curso de Desarrollo Web también en CoderHouse https://github.com/Diego-Schmidt/habemus-full-responsive/tree/habemus-sass
+Decidí reutilizar los diseños del proyecto Habemus Papa! que realizamos en el curso de Desarrollo Web también en CoderHouse [link](https://github.com/Diego-Schmidt/habemus-full-responsive/tree/habemus-sass).
 
 Para crear la funcionalidad necesaria para un proyecto ecommerce con carrito tuvimos que crear varios componentes. NavBar, Footer, CartContext, CartWidget, Item, ItemList, ItemListContainer, ItemDetailContainer, ItemDetail, ItemCount, LoadingSpinner y CartView, CheckOut.
 
@@ -41,23 +45,31 @@ CartView = Componente para generar el carrito de compras recibiendo la informaci
 
 CheckOut = Componente para generar el paso final del proceso de compras, donde el cliente ingresa sus datos y realiza el pago.
 
+
 Agradezco a profesores y turores de CoderHouse por la guia y la buena onda en todos los cursos, durante el proceso de aprendizaje :D y también a todos los compañeros que me ayudaron y a los cuales ayudé.
 
-Echo con
-[HTML]
-[CSS]
-Bootstrap
-[JavaScript]
-[ReactJS]
-[React-Bootstrap]
-[Sweetalert2]
-[Firebase]
-License
-Distributed under the MIT License. See LICENSE.txt for more information.
+### Echo con
 
-(Volver arriba)
+- [HTML]
+- [CSS]
+- [Bootstrap](https://getbootstrap.com)
+- [JavaScript]
+- [ReactJS]
+- [React-Bootstrap]
+- [Sweetalert2]
+- [Firebase]
 
-Contacto
-Diego Schmidt - @diegogschmidt - email@diegoschmidt.com
+<!-- LICENSE -->
+## License
 
-Link del proyecto: https://github.com/Diego-Schmidt/coderhouse-react Web Deployment: https://diego-schmidt.github.io/coderhouse-react/
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#top">Volver arriba</a>)</p>
+
+<!-- CONTACT -->
+## Contacto
+
+Diego Schmidt - [@diegogschmidt](https://twitter.com/diegogschmidt) - email@diegoschmidt.com
+
+Link del proyecto: [https://github.com/Diego-Schmidt/coderhouse-react](https://github.com/Diego-Schmidt/coderhouse-react)
+Web Deployment: [https://diego-schmidt.github.io/coderhouse-react/](https://diego-schmidt.github.io/coderhouse-react/)
