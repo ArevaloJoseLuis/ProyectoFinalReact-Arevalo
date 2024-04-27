@@ -11,20 +11,37 @@ import NotFound from "../NotFound/NotFound";
 
 export const ItemDetailContainer = () => {
   const [apartamento, setApartamento] = useState(null);
+  const [notFound, setNotFound] = useState(false);
 
   const { id } = useParams();
 
   useEffect(() => {
-    const db = getFirestore();
-    const refDoc = doc(db, "Item", id);
+    const fetchData = async () => {
+      const db = getFirestore();
+      const refDoc = doc(db, "Item", id);
 
-    getDoc(refDoc).then((snapshot) => {
-      setApartamento({ id: snapshot.id,...snapshot.data() });
-    });
+      try {
+        const snapshot = await getDoc(refDoc);
+        if (snapshot.exists()) {
+          setApartamento({ id: snapshot.id, ...snapshot.data() });
+        } else {
+          setNotFound(true);
+        }
+      } catch (error) {
+        setNotFound(true);
+      }
+    };
+
+    fetchData();
   }, [id]);
 
-  if(!apartamento) return <NotFound/>;
+  if (notFound) {
+    return <NotFound />;
+  }
 
+  if (!apartamento) {
+    return null; 
+  }
   return (
     <Container>
       <ItemDetail apartamento={apartamento} />
