@@ -15,7 +15,7 @@ const CartWidget = () => {
   return (
     <Link to="/cart">
       <button className="me-auto">
-        <BsCart3 size={28}/>
+        <BsCart3 size={28} />
         <strong>{total}</strong>
       </button>
     </Link>

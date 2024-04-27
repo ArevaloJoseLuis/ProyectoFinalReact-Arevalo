@@ -12,7 +12,6 @@ export const ItemCount = ({ onAdd, noches }) => {
   };
 
   const handleAdd = () => {
-    console.log("Adding", count, "items to cart...");
     setCount(1);
     onAdd(count);
   };
