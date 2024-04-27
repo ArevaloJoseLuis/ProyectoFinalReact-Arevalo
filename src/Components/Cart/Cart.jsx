@@ -7,6 +7,7 @@ const initialValues = {
   name: "",
   phone: "",
   email: "",
+  emailConfirm: "",
 };
 
 export const Cart = () => {
@@ -29,6 +30,10 @@ export const Cart = () => {
   const total = items.reduce((acu, act) => acu + act.valor * act.quantity, 0);
 
   const handleOrder = () => {
+    if (buyer.email !== buyer.emailConfirm) {
+      alert("Los emails ingresados no coinciden. Por favor, verifique.");
+      return;
+    }
     const order = {
       buyer,
       items,
@@ -120,6 +125,16 @@ export const Cart = () => {
             type="email"
             value={buyer.email}
             name="email"
+            onChange={handleChange}
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formEmailConfirm">
+          <Form.Label>Confirmar Email</Form.Label>
+          <Form.Control
+            type="email"
+            value={buyer.emailConfirm}
+            name="emailConfirm"
             onChange={handleChange}
             required
           />
