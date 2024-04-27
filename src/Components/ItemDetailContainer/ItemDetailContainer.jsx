@@ -5,6 +5,7 @@ import { Container } from "react-bootstrap";
 import { getFirestore, getDoc, doc } from "firebase/firestore";
 import { ItemCount } from "../ItemCount/ItemCount";
 import { ItemDetail } from "../Item/ItemDetail";
+import NotFound from "../NotFound/NotFound";
 
 
 
@@ -22,7 +23,7 @@ export const ItemDetailContainer = () => {
     });
   }, [id]);
 
-  if(!apartamento) return null;
+  if(!apartamento) return <NotFound/>;
 
   return (
     <Container>

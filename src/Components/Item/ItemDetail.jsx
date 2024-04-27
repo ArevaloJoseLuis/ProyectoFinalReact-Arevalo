@@ -9,9 +9,7 @@ export const ItemDetail = ({ apartamento }) => {
 
   const add = (quantity) => addItem(apartamento, quantity);
 
-  console.log("addItem function:", addItem);
-
-  return (
+    return (
     <Container>
       <header className="ecommerce-header">
         <h1 className="my-4 text-center">Detalle del Producto</h1>
