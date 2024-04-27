@@ -22,7 +22,8 @@ export const ItemDetail = ({ apartamento }) => {
         </Col>
         <div className="product-info col-md-6">
           <div className="location mb-3"><h2>{apartamento.provincia}, {apartamento.ciudad}</h2></div>
-          <div className="stock mb-3">Noches Disponibles {apartamento.noches}</div>
+          <div className="stock mb-3">Noches Disponibles: {apartamento.noches}</div>
+          <div className="valor mb-3">Valor de la Noche: U$D {apartamento.valor}</div>
           <div className="mb-3"><ItemCount className="mb-3" onAdd={add} noches={apartamento.noches} /></div>
         </div>
       </div>

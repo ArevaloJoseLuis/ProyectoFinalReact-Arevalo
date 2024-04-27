@@ -48,7 +48,7 @@ export const Cart = () => {
   const handleCloseConfirmation = () => {
     setShowConfirmation(false);
     setOrderId(null);
-    clear(); 
+    clear();
   };
 
   return (
@@ -60,24 +60,31 @@ export const Cart = () => {
             <th>Tipo</th>
             <th>Ubicacion</th>
             <th>Estadia</th>
-            <th>Valor</th>
+            <th>Valor Noche</th>
+            <th>Valor Total</th>
             <th>Eliminar</th>
           </tr>
         </thead>
         <tbody>
-          {items.map((item) => (
-            <tr key={item.id}>
-              <td>{item.categoria}</td>
-              <td>{item.provincia}, {item.ciudad}</td>
-              <td>{item.quantity}</td>
-              <td>${item.valor}</td>
-              <td>
-                <Button variant="danger" onClick={() => removeItem(item.id)}>
-                  Eliminar
-                </Button>
-              </td>
-            </tr>
-          ))}
+          {items.map((item) => {
+            const totalValue = item.valor * item.quantity;
+            return (
+              <tr key={item.id}>
+                <td>{item.categoria}</td>
+                <td>
+                  {item.provincia}, {item.ciudad}
+                </td>
+                <td>{item.quantity}</td>
+                <td>U$D{item.valor}</td>
+                <td>U$D{totalValue}</td>
+                <td>
+                  <Button variant="danger" onClick={() => removeItem(item.id)}>
+                    Eliminar
+                  </Button>
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </Table>
       <div className="mb-4">
